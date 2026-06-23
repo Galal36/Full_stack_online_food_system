@@ -86,20 +86,17 @@ URLs:
 
 ---
 
-## PostgreSQL Setup (Production)
+## sQLite3 Setup (Production, default)
 
 Update `backend/backend/settings.py`:
 ```python
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'foodrush_db',
-        'USER': 'postgres',
-        'PASSWORD': 'your_password',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 ```
 
 ---
