@@ -16,7 +16,7 @@ A full-stack food ordering prototype built with Django REST Framework + React + 
 
 | Feature | Status |
 |---|---|
-| Menu display with images & prices | done. the images I used fetched from open source images platforms just for testing |
+| Menu display with images & prices | done.|
 | Category filtering + search | done |
 | Add to cart (persistent via localStorage) | done |
 | User registration & login (JWT) | done |
