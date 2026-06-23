@@ -39,6 +39,8 @@ pip install -r requirements.txt
 python manage.py migrate
 python seed_data.py     # Creates admin, test user, categories, 14 menu items
 python manage.py runserver
+
+
 ```
 
 ### Frontend (React + Vite)
@@ -47,7 +49,10 @@ cd frontend
 npm install
 npm run dev
 ```
-
+### .sh Runs both
+```bash
+or you can run start.sh for running both servers
+```
 
 
 URLs:
