@@ -7,7 +7,7 @@ A full-stack food ordering prototype built with Django REST Framework + React + 
 ## Stack
 - **Backend:** Django 5 + Django REST Framework + SimpleJWT
 - **Frontend:** React 18 + Vite + react-i18next
-- **Database:** SQLite (dev) / PostgreSQL (prod-ready)
+- **Database:** SQLite (dev)
 - **Auth:** JWT (access + refresh tokens)
 
 ---
@@ -16,17 +16,17 @@ A full-stack food ordering prototype built with Django REST Framework + React + 
 
 | Feature | Status |
 |---|---|
-| Menu display with images & prices | ✅ |
-| Category filtering + search | ✅ |
-| Add to cart (persistent via localStorage) | ✅ |
-| User registration & login (JWT) | ✅ |
-| Place orders | ✅ |
-| Online payment (card form UI) | ✅ |
-| Cash on Delivery | ✅ |
-| Order status tracking with visual progress bar | ✅ |
-| Admin dashboard (stats, products, orders) | ✅ |
-| Arabic & English with RTL support | ✅ |
-| Responsive design | ✅ |
+| Menu display with images & prices | done. the images I used fetched from open source images platforms just for testing |
+| Category filtering + search | done |
+| Add to cart (persistent via localStorage) | done |
+| User registration & login (JWT) | done |
+| Place orders | done |
+| Online payment (card form UI) | done |
+| Cash on Delivery | done |
+| Order status tracking with visual progress bar | done |
+| Admin dashboard (stats, products, orders) | done |
+| Arabic & English with RTL support | done |
+| Responsive design | done |
 
 ---
 
@@ -48,10 +48,7 @@ npm install
 npm run dev
 ```
 
-Or use the combined start script:
-```bash
-./start.sh
-```
+
 
 URLs:
 - Frontend: http://localhost:5173
@@ -60,7 +57,7 @@ URLs:
 
 ---
 
-## Demo Credentials
+## Demo Credentials. I put them as a test case in the login page.
 
 | Role | Username | Password |
 |---|---|---|
@@ -126,6 +123,6 @@ foodorder/
 │       ├── pages/         # Home, Menu, Auth, Checkout, Orders, Admin
 │       └── locales/       # en.json, ar.json
 │
-├── start.sh               # One-command startup
+
 └── README.md
 ```
