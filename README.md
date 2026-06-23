@@ -32,33 +32,82 @@ A full-stack food ordering prototype built with Django REST Framework + React + 
 
 ## Running the Project
 
-### Backend (Django)
+### Prerequisites
+- **Python 3.10+**
+- **Node.js 20+** (Vite 8 will refuse to start on Node 18 or lower)
+- **Git**
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/Galal36/Full_stack_online_food_system.git
+cd Full_stack_online_food_system
+```
+
+### 2. Backend — Django (port 8000)
+
+Open **terminal 1**:
+
+**Linux / macOS / WSL**
 ```bash
 cd backend
+python3 -m venv .venv                # create virtual environment
+source .venv/bin/activate            # activate it
+pip install -r requirements.txt      # install Django, DRF, etc.
+python manage.py migrate             # apply database schema
+python seed_data.py                  # seed admin + test user + 14 menu items
+python manage.py runserver 0.0.0.0:8000
+```
+
+**Windows (PowerShell)**
+```powershell
+cd backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python manage.py migrate
-python seed_data.py     # Creates admin, test user, categories, 14 menu items
-python manage.py runserver
-
-
+python seed_data.py
+python manage.py runserver 0.0.0.0:8000
 ```
 
-### Frontend (React + Vite)
+Backend is now live at **http://localhost:8000**.
+
+### 3. Frontend — React + Vite (port 5173)
+
+Open **terminal 2** (leave the backend running):
+
 ```bash
 cd frontend
-npm install
+npm install      # first time only
 npm run dev
 ```
-### .sh Runs both
+
+> **Node version note:** Vite 8 requires Node 20+. Check with `node --version`. If it shows 18 or lower:
+> ```bash
+> # Linux / macOS / WSL — install via nvm
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+> source ~/.nvm/nvm.sh
+> nvm install 20 && nvm use 20
+> ```
+> Windows users can grab the Node 20 LTS installer from [nodejs.org](https://nodejs.org/).
+
+Frontend is now live at **http://localhost:5173** — open it in your browser.
+
+### 4. (Optional) One-command startup
+
+From the project root:
 ```bash
-or you can run start.sh for running both servers
+chmod +x start.sh    # first time only (Linux/macOS/WSL)
+./start.sh
 ```
+`start.sh` boots both servers in one terminal, auto-creates the venv and installs dependencies on first run, and stops both with a single `Ctrl+C`.
 
+### URLs
 
-URLs:
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:8000/api
-- Django Admin: http://localhost:8000/admin
+| What | URL |
+|---|---|
+| Frontend (the app) | http://localhost:5173 |
+| Backend API | http://localhost:8000/api |
+| Django Admin | http://localhost:8000/admin |
 
 ---
 
